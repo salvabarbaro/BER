@@ -55,16 +55,17 @@ summary(modelR2)
 broom::tidy(modelR2, exponentiate = TRUE, conf.int = TRUE)
 # Robustness check (R3) [Table 2, (3) and (4)]: Fixed-effects ordered logistic regression
 df3 <- df1 %>% mutate(state.factor = as.factor(statenumber))
-## mod2 + FE
-mod7 <- as.factor(index) ~ lninc + lnincfed + timetrend + (1 | state.factor)
-modelFE1 <- clmm(formula = mod7,
-                 data = df3, threshold = 'equidistant', Hess = TRUE)
+#
+mod7 <- as.factor(index) ~ lninc + lnincfed + timetrend + state.factor
+modelFE1 <- clm(formula = mod7,
+                 data = df3, Hess = TRUE)
 broom::tidy(modelFE1, exponentiate = T, conf.int = T)
 #
 mod8 <- as.factor(index) ~ lninc + lnincfed + lnvac + 
-  lnvacfed + timetrend + (1 | state.factor)
-modelFE2 <- clmm(formula = mod8,
-                 data = df3, threshold = 'equidistant', Hess = TRUE)
+  lnvacfed + prevac + timetrend + state.factor
+modelFE2 <- clm(formula = mod8,
+                 data = df3,  
+                Hess = TRUE)
 broom::tidy(modelFE2, exponentiate = T, conf.int = T)
 
 ### Calculate clustered SE
