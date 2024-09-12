@@ -5,6 +5,13 @@ Replication Data to the Paper entitled "Laboratory Experiments vs. Opportunistic
 
 This repository contains R and Stata files for replication purposes. Data sets are also embedded in this repository.
 
+1. Main analysis_replication file.de [Stata replication file for the main analyses (Tables 1 to 4)] This file has actually been used for conducting the regressions.
+2. MainAnalysisOrdinal.R [Similar to the *.do file (1), but written for R.]
+3. bootstrap.R [The main analyses (Table 1) conducted by a boostrap approach]
+4. bootstrapFE.R [Fixed effect regressions (Table 2 (3) by bootstrapping]
+5. Visualisations.R [Some R code to visualize (ggplot, plotreg, texreg etc.) the results conducted by MainAanalysisOrdinal.R]
+
+
 ## Getting Started
 
 ### Dependencies
