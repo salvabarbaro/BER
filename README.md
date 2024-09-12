@@ -10,6 +10,8 @@ This repository contains R and Stata files for replication purposes. Data sets a
 3. bootstrap.R [The main analyses (Table 1) conducted by a boostrap approach]
 4. bootstrapFE.R [Fixed effect regressions (Table 2 (3) by bootstrapping]
 5. Visualisations.R [Some R code to visualize (ggplot, plotreg, texreg etc.) the results conducted by MainAanalysisOrdinal.R]
+6. Tweets_replication file.do [Analysis for the analyses that centered around the prime ministers' conferences]
+
 
 
 ## Getting Started
