@@ -111,27 +111,3 @@ BIC(model.re)
 # Likelihood ratio test between the random effects and fixed effects model
 #anova(model.re, model.fe)
 #anova(model.fe, model.re)  ## Models are not nested! LRT not appropriate.
-coef_fe <- coef(model.fe)  %>% 
-  as.data.frame(.) 
-
-fe.rownames <- coef_fe %>% row.names(.)
-
-coef.fe <- coef_fe %>% mutate(Coef = fe.rownames) %>% filter(grepl("^factor", Coef)) %>%
-  setNames(c("state_coefs", "Coef" ))
-
-
-
-
-# Create a data frame for plotting
-state_df <- data.frame(
-  statenumber = 2:16,  # Exclude reference state
-  estimate = coef.fe$state_coefs
-)
-ggplot(state_df, aes(x = statenumber, y = estimate)) +
-  geom_point() +
-  geom_hline(yintercept = 0, linetype = "dashed") +  # Zero line represents the reference state
-  labs(title = "Fixed Effects for Each State (Deviation from Overall Intercept)",
-       x = "Statenumber",
-       y = "Coefficient (Deviation from Reference State)") +
-  theme_minimal()
-# -- perfect bullshit!
