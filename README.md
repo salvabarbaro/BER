@@ -1,5 +1,5 @@
 # BER
-Replication Data to the Paper entitled "Laboratory Experiments vs. Opportunistic Behavior: State Governments Strategies in Times of Pandemic."
+Replication Data to the Paper entitled "Autonomy and Accountability: Strategic Behavior of German State Leaders During the COVID-19 Pandemic"
 
 ## Description
 
