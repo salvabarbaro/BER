@@ -1,0 +1,36 @@
+\begin{table}[htbp]
+%	\centering
+\caption{Robustness checks: COVID-19 incidence rates and state prime ministers' statements favoring (de)centralized decision-making}
+\begin{tabular}{lcccc}		\toprule
+  & Excluding NW & Deviations in- & Fixed & Fixed \\
+  & and BY       & stead of logs & effects & effects \\
+  & (1) & (2) & (3) & (4) \\	\midrule
+ln(state-level  & 2.145*** &  & 1.610 & 1.504  \\
+\, incidence rate)  & [1.38,3.33] &  & [0.91,2.86] & [0.86,2.63]   \\
+  & & & & 			\\
+ln(state-level   & 0.751* &  & & 0.740**   \\
+\, vacc. rate)  &   [0.58,0.97] & & & [0.56,0.98]   \\
+  & & & &		\\
+Perc. diff.: state- vs   &  & 1.956** &  &  \\
+\, fed.-level incid. rate &  & [1.17,3.25] &  &  \\
+  & & & &			\\
+Perc. diff.: state- vs       &  & 0.961 &  &  \\
+\, fed.-level vacc. rate	&  & [0.10,9.22]  &  &  \\
+ & & & &		\\
+Linear time trend & Yes & Yes & Yes & Yes \\
+& & & & \\
+Dummies for Eastern  & Yes & Yes & No & No \\
+\, states and Berlin & & & & \\
+ & & & & \\
+State-level controls & Yes & Yes & No & No \\
+ & & & & \\
+State fixed effects & No & No & Yes & Yes \\
+ & & & &		\\ \midrule
+ Observations & 479 & 600 & 600 & 600 \\		\bottomrule
+\end{tabular}		
+\label{tb.reg02}
+\begin{minipage}{\textwidth}
+\small 	\textit{Notes:} Columns (1), (3) and (4) each report exponentiated coefficients from a separate ordered logit regression. In columns (3) and (4), these are state fixed effects (conditional) ordered logistic regressions. Dependent variable is the 4-point pandemic policy index (PPI). Higher values indicate a stronger expressed desire for centralized decision-making. Coefficients are expressed as changes in the odds ratio of giving a statement $Y$ that falls into a higher vs a lower category $j$, i.e., $P(Y \leq j)/P(Y > j)$. Column (2) shows results from a regression in which the independent variable of interest is measured as percent difference between state-level and federal-level rates. Regressions (1), (3) and (4) control for ln(federal level incidence rate). Regressions (1) and (4) additionally control for ln(federal level vaccination rate). Regressions (1), (2) and (4) include a dummy for the pre-vaccination period. State-level controls include states' general stances towards federalism, share of the manufacturing sector in gross value added, and financial strength ("Finanzkraftmesszahl").
+\newline \textit{*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$}
+\end{minipage}
+\end{table}

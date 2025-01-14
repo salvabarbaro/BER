@@ -1,0 +1,26 @@
+\begin{table}[htbp] 
+	\centering
+\caption{Covid-19 incidence rates and state prime ministers' statements favoring (de)centralized decision-making}
+ \label{tb.mainreg}
+\begin{tabular}{lccccc} \toprule
+    & (1) & (2) & (3) & (4) & (5) \\ \midrule
+ln(state-level  & 1.730** & 1.904*** & 2.003*** & 1.983** & 1.985** \\
+\, incidence rate)	& [1.22,2.45] & [1.34,2.70]  & [1.41,2.85]  & [1.30,3.02]  & [1.29,3.06] \\
+ & & & & & \\
+ln(state-level  &  &  &  &  & 0.806 \\
+\, vacc. rate)		&  &  &  &  & [0.606,1.072] \\
+		& & & & & \\
+Linear time trend & No & Yes & Yes & Yes & Yes \\
+		& & & & & \\
+Dummies Eastern  &    &    &     &     & \\
+\,  states and Berlin  & No & No & Yes & Yes & Yes \\ 
+		& & & & & \\
+State-level controls & No & No & No & Yes & Yes \\ \\ \midrule
+ Observations & 600 & 600 & 600 & 600 & 600 \\		\bottomrule
+\end{tabular}
+\label{tb.reg01}
+\begin{minipage}{\textwidth}
+	\small
+\textit{Notes:} Each column reports exponentiated coefficients from a separate ordered logit regression. Dependent variable is the 4-point pandemic policy index (PPI). Higher values indicate a stronger expressed desire for centralized decision-making. Coefficients are expressed as changes in the odds ratio of giving a statement $Y$ that falls into a higher vs a lower category $j$, i.e., $P(Y\leq j)/P(Y > j)$. All regressions control for ln(federal level incidence rate) and column (5) additionally controls for ln(federal level vaccination rate) and a dummy for the pre-vaccination period. State-level controls include states' general stances towards federalism, share of the manufacturing sector in gross value added, and financial strength ("Finanzkraftmesszahl"). \newline \textit{*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$}
+	\end{minipage}
+\end{table}

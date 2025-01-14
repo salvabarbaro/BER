@@ -1,0 +1,22 @@
+\begin{table}[htbp]
+%	\centering
+\caption{Numbers of statements per day around prime ministers conferences (PMC)}
+\begin{tabular}{lccc}	\toprule
+    & (1) & (2) & (3) \\	\midrule
+Week of PMC & 1.786*** &  &  \\
+    & (0.492) &  &  \\
+    & & &			\\
+3 days before PMC &  & 0.081 &  \\
+    &  & (0.422) &  \\
+    & & &			\\
+Day of PMC till 3 days afterwards &  &  & 2.672*** \\
+    &  &  & (0.727) \\
+    & & &			\\ \midrule 
+Observations & 289 & 289 & 289 \\ \bottomrule
+\end{tabular}
+\label{tb.pmc}
+\begin{minipage}{\textwidth}
+\small
+\textit{Notes:} Each column reports results from an OLS regression in which each observation contains the number of statements (tweets) given by state prime ministers per day. Each regression corrects for day of the week fixed effects and includes a dummy indicating a period around the PMCs. In column (1), this is the time period from three days before till three days after PMCs, in column (2), this is three days before PMCs and in column (3), this is the days of PMCs $+$ 3 days afterwards. \newline \textit{*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$}.
+	\end{minipage}
+\end{table}

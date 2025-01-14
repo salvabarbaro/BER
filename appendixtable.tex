@@ -1,0 +1,35 @@
+\begin{table}[htbp] 
+\centering
+\caption{Covid-19 incidence rates and state prime ministers' statements favoring (de)centralized decision-making}
+ \label{tb.appendixtable}
+	\begin{tabular}{lcc} \toprule
+		& (1) & (2)  \\ \midrule
+ln(state-level incidence rate) & 1.983** & 1.985** \\
+	&	[1.30,3.02]  & [1.29,3.06] \\
+  & & \\
+ln(state-level vacc. rate) & & 0.806 \\
+		&  & [0.606,1.072] \\
+   & & \\
+State's general stance towards federalism & 0.850 & 0.826 \\
+\, (1 = decentralization, $\ldots$ 4 = centralization ) & [0.566,1.270] & [0.548,1.24] \\
+ & & \\
+State's financial strength (mean 94, SD 17) & 0.990 & 0.989 \\
+        & [0.968,1.01] & [0.967,1.01] \\
+         & & \\
+State's share of the manufacturing sector  & 0.161 & 0.136 \\
+\, in gross value added        & [0.004,6.710] & [0.003,5.752]  \\ 
+		& &  \\
+Linear time trend & Yes & Yes \\
+		& &  \\
+Dummies for Eastern  &    &     \\
+\,  states and Berlin  & Yes & Yes \\ 
+		& &  \\ \bottomrule 
+	\end{tabular}
+\begin{minipage}{\textwidth}
+\small
+\textit{Notes:} 
+This table corresponds to columns (4) and (5) in Table \ref{tb.mainreg}, with the difference that the state-level controls are reported individually. For explanations of the values, we refer to the description of Table \ref{tb.mainreg}.
+ %Each column reports exponentiated coefficients from a separate ordered logit regression. Dependent variable is the 4-point pandemic policy index (PPI). Higher values indicate a stronger expressed desire for centralized decision-making. Coefficients are expressed as changes in the odds ratio of giving a statement $Y$ that falls into a higher vs a lower category $j$, i.e., $P(Y\leq j)/P(Y > j)$. All regressions control for ln(federal level incidence rate) and column (5) additionally controls for ln(federal level vaccination rate) and a dummy for the pre-vaccination period. State-level controls include states' general stances towards federalism, share of the manufacturing sector in gross value added, and financial strength ("Finanzkraftmesszahl"). 
+ \newline \textit{*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$}
+	\end{minipage}
+\end{table}

@@ -1,0 +1,42 @@
+Z 94: 
+Bedeutet konkurrierende Gesetzgebung nicht, dass zwar Bund und Länder in einem bestimmten Gebiet Gesetzgeberische Kompetenzen haben, letztlich aber Bundesrecht vor Landesrecht geht (und somit der Bund schlussendlich seinen Einfluss ausübt), siehe auch 2.1. the federal structure?
+Passt dann das Beispiel gemäß dem die Länder wählen konnten ob sie eigene Entscheidungen treffen oder Bundesweisten Beschlüssen folgen?
+
+[sb] Danke für den Hinweis. Die KG bedeutet, dass beide Seiten eine Gesetzgebungskompetenz haben. Solange der Bund aber von seiner nicht Gebrauch macht, entscheiden die Ländern. Insofern scheint mir der Absatz nach Z. 94 zu passen: Da der Bund seine Kompetenz nicht nutzte, oblag die Entscheidungsgewalt den Ländern. Oder habe ich etwas missverstanden?
+
+
+Z 140:
+While centralized decisions were very rare in the first months after the pandemic's onset, decisions became more heterogeneous (decentralized and unilateral) during the second and third wave \citep{Hegele2021, Kuhlmann2021}.
+Widerspricht sich das nicht? Müsste es nicth "very common" oder "very homogenious" heißen? 
+
+[sb] Völlig berechtigt. Hier waren zwei Begriffe vermischt. Centralized meint: Entscheidungen durch den Bund. Was wir aber meinen ist: homogen. Ich habe das angepasst. Nun steht da: While policy decisions were homogeneous in the first months after the pandemic's onset, decisions became more heterogeneous during the second and third wave \citep{Hegele2021, Kuhlmann2021}.
+
+
+
+Z 210: Müsste es nicht "democrats" anstatt "liberals" heißen?
+[sb] Die Politikwissenschaft teilt die Leute auf dem ideologischen Links-Rechts-Spektrum ein in conservatives, liberals, moderates. Das muss nicht zwangsläufig mit einer Partei zusammenhängen. Ich würde liberals drin lassen, weil die Quelle, auf die wir uns hier beziehen, ausdrücklich von liberals spricht. 
+
+
+Z 224: Müssten wir die geringere Reliability noch mit einer Quelle belegen oder ist es in Ordnung das so allgemein zu beschreiben?
+[sb] Reyn? 
+Ist OK so RvE 27.08.2024
+
+
+Z 251: Ich dachte die unabhängige Variable in Equation 1 ist die unabhängige Variable die Inzidenzrate (und nicht die Impfquote)?
+[sb] Reyn?
+RvE 27.08.2024: Habe ich nicht verstanden oder gefunden? (Vielleicht sind die Zeilennummer mittlerweile verschoben?)
+
+
+Grundsätzlich ist mir noch aufgefallen, dass wir einerseits von federalistic vs. Unitary decision making sprechen und andererseits von central vs. decentral decision making. Passt das oder wollen wir uns auf ein Begriffspaar konzentrieren?
+
+[sb]: Guter Punkt. Ich gehe vor dem Hintergrund noch mal den Text durch. Im Grunde sollten wir klarmachen, dass es nicht um "Bund entscheidet" vs. "Länder entscheidet" geht, sondern um die Homogenität / Heterogenität der Länderentscheidungen. 
+
+
+
+Conclusion (Ideen im Nachgang zur Gesamtschau) 
+- evtl. methodologically rigorous transformation of qualitative into quantitative data using fleiß kappa
+- Comprehensive famework in which we consider a wide range of state specific factors by controling for the general stance of the prime ministers
+- Used method 
+- To our knowledge first empirial contribution to an ongoing discussion which shows that...(Bezug auf Researchergebnisse)  and support thus ...(Einleitungsbezug)
+
+[sb] Vielen Dank! Ich mache gerne einen Entwurf für die Conclusion, möchte aber noch paar empirische Fragen vorab klären. ed

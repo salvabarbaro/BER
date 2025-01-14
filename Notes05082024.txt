@@ -1,0 +1,74 @@
+BER: Stand 05.08.2024
+
+1. Z. 106 / Z. 136: hier habe ich eine längere Passage gekürzt, die mir beim neuen Lesen ver-zichtbar erschien.
+
+2. Z. 158 / Ende von Abschnitt 2 (Z. 222). Vorschlag RvE: Kürzung. Habe ich so übernom-men.
+
+3. Z. 169 / Beginn von Abschnitt 3: RvE: bitte überprüfen. Ich habe den Verweis auf Brand-width rausgenommen und statt dessen das twitter-api package zitiert, welches wir (anfäng-lich) tatsächlich benutzt haben. Julia: siehst Du hier Änderungsbedarf?
+
+Nein, das passt aus meiner Sicht JR 24.08.2024
+Ich kann nicht so gut abschätzen, in wieweit das so ausreicht. Sollten wir nicht noch etwas über die Keywords, die ihr benutzt habt sagen? RvE 27.08.2024
+
+4. Z. 178 / Z. 246: Ich habe die Beispiele für die Kategorisierungen in den Anhang gepackt, es erschien mir zu detalliert. OK?
+
+Ja, die aktuelle Version finde ich deutlich angenehmer zu lesen JR 24.08.2024
+OK RvE 27.08.2024
+
+
+5. Z. 180 / Z. 249: Julia, schaust Du bitte, ob das so jetzt OK ist?
+
+Z 180 ist leer, meintest Du Z 181? Zeile 181 passt aus meiner Sicht JR 24.08.24
+
+
+6. Z. 182 / Z. 250: RvE: Referenz. Ich habe die 3. Edition des Buches als Referenz eingege-ben.
+OK RvE 27.08.2024
+
+7. Z. 183 / Z. 259: Vorher stand da: " If there is not agreement among coders, then \kappa >= 0.". Das habe ich geändert, weil doch das Fleiss-kappa dann sogar negativ wäre, oder? Schaut ihr mal die neue Passage an?
+
+Siehe meine Antwort im Text JR 24.08.24
+OK, das war ein Typfehler meinerseits. Der neue Text ist besser formuliert. RvE 27.08.2024
+
+
+8. Z. 189 / Z. 269: RvE: Referenzieren. Ich habe unsere Datenquelle hinzugefügt (Julia: OK?)
+Ok JR 24.08.24
+
+
+9. Z. 196 / Eq. (1): RvE: ' Julia/Salva: "=" in meiner Gleichung sieht im Output aus als "-". Kann einer von auch das Problem beheben? ' --> Sollte behoben sein, bitte nur kurz prüfen. Vor allem, X' in der Gleichung, dann X im Text. So OK?
+
+Sieht bei mir gut aus JR 24.08.24
+
+
+10. Z. 211 / Z. 322: Die Finanzkraftmesszahl ist in den state-level-controls berücksichtigt? Brauchen wir sie überhaupt? Oder sollten wir darauf verweisen, dass die Finanzkraft die 'ge-neral stances towards federalism' erklärt. Kurz: sollten wir den Teil mit der Finanzkraft kür-zen/streichen oder so belassen?
+
+Ich denke das erste was sich eine, insbesondere eine ökonomisch versierte Leserschaft fragt, ist, inwiefern die Finanzstärke der Länder eine Rolle spielt. Daher würde ich zumindest in ei-nem Nebensatz erwähnen, dass die „general stance towards federalism“ auch die Finanzkraft berücksichtigt. JR 24.08.24
+RvE 27.08.24: Wenn man die Variable aus der Regression weglässt, dann ändert sich der geschätzte Effekt nicht (wird ganz leicht größer: 2.01 statt 1.98). Oder meintest du das nicht? Sonst ist das eine reine inhaltliche Entscheidung.
+
+
+11. Z. 213 / Z. 329: RvE: Referenzieren. Habe ich erledigt.
+
+
+12. Z. 216 / Footnote 7: Ich habe eine neue Fußnote eingefügt, weil ich die Verwendung der Impfquote als Variable besser begründen wollte. OK für Euch?
+Ja, JR 24.08.2024
+OK RvE 27.08.2024
+
+
+13. Z. 221 / Z. 345: Ich habe die Referenz Brandt (1990) eingefügt. Passt das so?
+
+Meinem Verständnis nach testet man mit dem Brandt Test die Proportional Odds Assumption und mit dem Likelyhood ratio test die statistical interference der Model Parameter. Somit dürf-te zwar die Quellenangabe passen aber müssten wir nicht „using a brant test“ schreiben?  JR 24.08.24
+Ich denke, die jetzige Fassung ist OK (Stata nennt den Test nicht „Brant test“ sondern nur likelihood ratio test.) RvE 27.08.24
+
+14. Z. 225 / Z. 351: Neuer Absatz, warum wir NRW und Bayern besonders berücksichtigt haben. OK?
+
+Z 225, passt Z 351 gibt es aber gar nicht in „main.tex“, welche Zeile meinst Du? JR 24.08.24
+OK RvE 27.08.2024
+
+
+15. Z. 235 / Abschnitt Main Analysis (4.1). Die Tabellen sind von pdf auf LaTeX überführt und nun im Text. Der gesamte Abschnitt sollte noch mal kritisch durchgelesen werden. Ich habe die Stichpunkte von RvE für einen Text genutzt. Kann sein, dass er nicht sehr gut ist. (Hin-weis: die Tabellen sind nicht im main.tex enthalten, sondern als separate *.tex-Dateien, die in das main-Dokument importiert werden).
+
+
+16: Eine inhaltliche Frage: können oder sollten wir etwas Konkretes über den Effekt des Fe-deralism-Index sagen? Wenn ich es richtig verstehe, dann ist dieser Index als covariate ent-halten. Für die Conclusio wäre es aber schön, wir könnten etwas sagen wie: während die In-zidenz einen hochsignifikanten Effekt zeigt, finden wir keinen Zusammenhang zu den Grund-überzeugungen.
+RvE 27.08.2024: I uploaded a table with the full results of the regressions in columns (4) and (5) of Table 1 (those are the ones that include this covariate). The coefficient is not significant in either regression.
+If you want to write something about this, it should be along the lines of
+… Appendix Table X shows the results from columns (4) and (5) of this table, which include the state-level controls. As can be seen from this table, the coefficients to none of the three variables reach significance. The coefficient to the variable measuring states’ general attitudes towards federalism suggests that states that had been strongly in favor of centralization before the pandemic became relatively less so during the pandemic, and vice versa.
+
+17. Anmerkung: ich kümmere mich noch ein wenig um bessere Daten, um die Awareness für Dokumente rund um die Konferenzen zu bekommen.

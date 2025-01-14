@@ -1,0 +1,26 @@
+\begin{table}[htbp]
+%	\centering
+\caption{Covid-19 incidence rates and state prime ministers' statements favoring (de)centralized decision-making around the prime ministers conferences}
+\begin{tabular}{lcc} \toprule
+    & Week of prime ministers & Day of PMC till \\
+    & conference (PMC)        & 3 days afterwards \\
+    & (1) & (2) \\ 		\midrule
+ln(state-level incidence rate) & 2.436** & 3.482** \\
+    & [1.26,4.71] & [1.62,7.47]  \\
+    & & \\
+ln(state-level vaccination rate) & 2.526 & 0.467 \\
+    & [0.07,91.21] & [0.01,22.14]  \\
+    & & \\
+Linear time trend & Yes & Yes \\
+Dummies for Eastern & Yes & Yes \\
+\, states and Berlin & & \\
+State-level controls & Yes & Yes \\
+& & \\ \midrule
+Observations & 294 & 223 \\ \bottomrule
+\end{tabular}
+\label{tb.regpmc}
+\begin{minipage}{\textwidth}
+\small
+\textit{Notes:} Each column reports exponentiated coefficients from a separate ordered logit regression. Column (1) limits the sample to the week around prime ministers conferences (PMC). Column (2) limits the sample to the days of PMCs $+ 3$ days afterwards. Dependent variable is the 4-point pandemic policy index (PPI). Higher values indicate a stronger expressed desire for centralized decision-making. Coefficients are expressed as changes in the odds ratio of giving a statement Y that falls into a higher vs a lower category j, i.e., $P(Y\leq j)/P(Y>j)$. Both regressions control for ln(federal level incidence rate), ln(federal level vaccination rate) and a dummy for the pre-vaccination period. State-level controls include states' general stances towards federalism, share of the manufacturing sector in gross value added, and financial strength ("Finanzkraftmesszahl"). \newline \textit{*** $p < 0.01$, ** $p < 0.05$, * $p < 0.10$}
+	\end{minipage}
+\end{table}
