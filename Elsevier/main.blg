@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2023/Debian)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: main.aux
+The style file: elsarticle-harv.bst
+Database file #1: BER.bib
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Warning--can't use both author and editor fields in Fleiss2003
+Warning--can't use both author and editor fields in Madison1787
+Warning--can't use both author and editor fields in Rowe2023
+Warning--empty chapter and pages in Rowe2023
+You've used 29 entries,
+            2990 wiz_defined-function locations,
+            878 strings with 10878 characters,
+and the built_in function-call counts, 17696 in all, are:
+= -- 1421
+> -- 506
+< -- 24
++ -- 209
+- -- 168
+* -- 1833
+:= -- 2558
+add.period$ -- 110
+call.type$ -- 29
+change.case$ -- 197
+chr.to.int$ -- 29
+cite$ -- 33
+duplicate$ -- 1369
+empty$ -- 1405
+format.name$ -- 255
+if$ -- 3344
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 253
+newline$ -- 183
+num.names$ -- 116
+pop$ -- 452
+preamble$ -- 1
+purify$ -- 172
+quote$ -- 0
+skip$ -- 431
+stack$ -- 0
+substring$ -- 834
+swap$ -- 924
+text.length$ -- 2
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 246
+warning$ -- 4
+while$ -- 122
+width$ -- 0
+write$ -- 464
+(There were 4 warnings)
