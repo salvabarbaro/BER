@@ -1,0 +1,283 @@
+\begin{thebibliography}{33}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Agrawal et~al.(2022)Agrawal, Hoyt and Wilson}]{Agrawal2022}
+\bibinfo{author}{Agrawal, D.R.}, \bibinfo{author}{Hoyt, W.H.},
+  \bibinfo{author}{Wilson, J.D.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Local policy choice: {T}heory and empirics}.
+\newblock \bibinfo{journal}{Journal of Economic Literature}
+  \bibinfo{volume}{60}, \bibinfo{pages}{1378--1455}.
+\newblock \DOIprefix\doi{10.1257/jel.20201490}.
+%Type = Article
+\bibitem[{Algara et~al.(2022)Algara, Amlani, Collitt, Hale and
+  Kazemian}]{Algara2022}
+\bibinfo{author}{Algara, C.}, \bibinfo{author}{Amlani, S.},
+  \bibinfo{author}{Collitt, S.}, \bibinfo{author}{Hale, I.},
+  \bibinfo{author}{Kazemian, S.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Nail in the coffin or lifeline? {E}valuating the
+  electoral impact of {COVID}-19 on president {T}rump in the 2020 election}.
+\newblock \bibinfo{journal}{Political Behavior}
+  \DOIprefix\doi{10.1007/s11109-022-09826-x}.
+%Type = Article
+\bibitem[{Barbaro and Rode(2025)}]{BarbaroRode2024}
+\bibinfo{author}{Barbaro, S.}, \bibinfo{author}{Rode, J.M.},
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{What explains {G}erman {L}änder governments' stances
+  towards federalism?}
+\newblock \bibinfo{journal}{Publius. The Journal of Federalism}
+  \bibinfo{volume}{55 (forthc.)}.
+\newblock \DOIprefix\doi{10.1093/publius/pjae050}.
+%Type = Article
+\bibitem[{Brant(1990)}]{Brant1990}
+\bibinfo{author}{Brant, R.}, \bibinfo{year}{1990}.
+\newblock \bibinfo{title}{Assessing proportionality in the proportional odds
+  model for ordinal logistic regression}.
+\newblock \bibinfo{journal}{Biometrics} \bibinfo{volume}{46},
+  \bibinfo{pages}{1171}.
+\newblock \DOIprefix\doi{10.2307/2532457}.
+%Type = Article
+\bibitem[{Burkhart et~al.(2008)Burkhart, Manow and Ziblatt}]{Burkhart2008}
+\bibinfo{author}{Burkhart, S.}, \bibinfo{author}{Manow, P.},
+  \bibinfo{author}{Ziblatt, D.}, \bibinfo{year}{2008}.
+\newblock \bibinfo{title}{A more efficient and accountable federalism? {A}n
+  analysis of the consequences of {G}ermany's 2006 constitutional reform}.
+\newblock \bibinfo{journal}{German Politics} \bibinfo{volume}{17},
+  \bibinfo{pages}{522--540}.
+\newblock \DOIprefix\doi{10.1080/09644000802501349}.
+%Type = Article
+\bibitem[{Flach and Steininger(2020)}]{Flach2020}
+\bibinfo{author}{Flach, L.}, \bibinfo{author}{Steininger, M.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{{Globalisierung nach Covid-19: Die Folgen der
+  Pandemie für die deutsche Wirtschaft}}.
+\newblock \bibinfo{journal}{ifo Schnelldienst} \bibinfo{volume}{73},
+  \bibinfo{pages}{17--23}.
+\newblock \URLprefix
+  \url{https://ideas.repec.org/a/ces/ifosdt/v73y2020i07p17-23.html}.
+%Type = Book
+\bibitem[{Fleiss et~al.(2003)Fleiss, Levin and Paik}]{Fleiss2003}
+\bibinfo{author}{Fleiss, J.L.}, \bibinfo{author}{Levin, B.},
+  \bibinfo{author}{Paik, M.C.}, \bibinfo{year}{2003}.
+\newblock \bibinfo{title}{Statistical Methods for Rates and Proportions}.
+\newblock Wiley Series in Probability and Statistics. \bibinfo{edition}{3} ed.,
+  \bibinfo{publisher}{Wiley}, \bibinfo{address}{Hoboken, N.J}.
+\newblock \DOIprefix\doi{10.1002/0471445428}.
+%Type = Article
+\bibitem[{Glaser et~al.(2023)Glaser, Berry and Schildkraut}]{Glaser2023}
+\bibinfo{author}{Glaser, J.M.}, \bibinfo{author}{Berry, J.M.},
+  \bibinfo{author}{Schildkraut, D.J.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Ideology and support for federalism in
+  theory{\textemdash}and in practice}.
+\newblock \bibinfo{journal}{Publius: The Journal of Federalism}
+  \bibinfo{volume}{53}, \bibinfo{pages}{511--535}.
+\newblock \DOIprefix\doi{10.1093/publius/pjad003}.
+%Type = Article
+\bibitem[{Guidotti(2022)}]{Guidotti2022}
+\bibinfo{author}{Guidotti, E.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{A worldwide epidemiological database for {COVID}-19
+  at fine-grained spatial resolution}.
+\newblock \bibinfo{journal}{Scientific Data} \bibinfo{volume}{9},
+  \bibinfo{pages}{112}.
+\newblock \DOIprefix\doi{10.1038/s41597-022-01245-1}.
+%Type = Article
+\bibitem[{Gunlicks(2007)}]{Gunlicks2007}
+\bibinfo{author}{Gunlicks, A.B.}, \bibinfo{year}{2007}.
+\newblock \bibinfo{title}{German federalism reform: {P}art one}.
+\newblock \bibinfo{journal}{German Law Journal} \bibinfo{volume}{8},
+  \bibinfo{pages}{111--131}.
+\newblock \DOIprefix\doi{10.1017/s2071832200005447}.
+%Type = Article
+\bibitem[{Hegele and Schnabel(2021)}]{Hegele2021}
+\bibinfo{author}{Hegele, Y.}, \bibinfo{author}{Schnabel, J.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Federalism and the management of the {COVID}-19
+  crisis: centralisation, decentralisation and (non-)coordination}.
+\newblock \bibinfo{journal}{West European Politics} \bibinfo{volume}{44},
+  \bibinfo{pages}{1052--1076}.
+\newblock \DOIprefix\doi{10.1080/01402382.2021.1873529}.
+%Type = Book
+\bibitem[{Hesse(1962)}]{Hesse1962}
+\bibinfo{author}{Hesse, K.}, \bibinfo{year}{1962}.
+\newblock \bibinfo{title}{Der unitarische Bundesstaat}.
+\newblock \bibinfo{publisher}{Mueller}.
+%Type = Article
+\bibitem[{Jun and Minas(2023)}]{Jun2023}
+\bibinfo{author}{Jun, U.}, \bibinfo{author}{Minas, M.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Power struggles in the {G}erman {C}hristian
+  {D}emocrats. {T}he dynamics of three consecutive leadership contests}.
+\newblock \bibinfo{journal}{Frontiers in Political Science}
+  \bibinfo{volume}{5}.
+\newblock \DOIprefix\doi{10.3389/fpos.2023.1039547}.
+%Type = Article
+\bibitem[{Kaatz et~al.(2022)Kaatz, Springer and Zieger}]{Kaatz2022}
+\bibinfo{author}{Kaatz, M.}, \bibinfo{author}{Springer, S.},
+  \bibinfo{author}{Zieger, M.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Influence of the {COVID}-19 pandemic measures on
+  incidence and representation of other infectious diseases in {G}ermany: {A}
+  lesson to be learnt}.
+\newblock \bibinfo{journal}{Journal of Public Health} \bibinfo{volume}{31},
+  \bibinfo{pages}{1673--1680}.
+\newblock \DOIprefix\doi{10.1007/s10389-022-01731-1}.
+%Type = Article
+\bibitem[{Kearney(2019)}]{Kearney2019}
+\bibinfo{author}{Kearney, M.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{rtweet: {C}ollecting and analyzing {T}witter data}.
+\newblock \bibinfo{journal}{Journal of Open Source Software}
+  \bibinfo{volume}{4}, \bibinfo{pages}{1829}.
+\newblock \DOIprefix\doi{10.21105/joss.01829}.
+%Type = Article
+\bibitem[{Kennedy et~al.(2022)Kennedy, Sayers and Alcantara}]{Kennedy2022}
+\bibinfo{author}{Kennedy, J.}, \bibinfo{author}{Sayers, A.},
+  \bibinfo{author}{Alcantara, C.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Does federalism prevent democratic accountability?
+  {A}ssigning responsibility for rates of {COVID}-19 testing}.
+\newblock \bibinfo{journal}{Political Studies Review} \bibinfo{volume}{20},
+  \bibinfo{pages}{158--165}.
+\newblock \DOIprefix\doi{10.1177/14789299211001690}.
+%Type = Article
+\bibitem[{Kotsogiannis and Schwager(2006)}]{KotSchwager2006}
+\bibinfo{author}{Kotsogiannis, C.}, \bibinfo{author}{Schwager, R.},
+  \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{On the incentives to experiment in federations}.
+\newblock \bibinfo{journal}{Journal of Urban Economics} \bibinfo{volume}{60},
+  \bibinfo{pages}{484--497}.
+\newblock \DOIprefix\doi{10.1016/j.jue.2006.04.008}.
+%Type = Article
+\bibitem[{Kropp and Behnke(2016)}]{Kropp2016}
+\bibinfo{author}{Kropp, S.}, \bibinfo{author}{Behnke, N.},
+  \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{Marble cake dreaming of layer cake: {T}he merits and
+  pitfalls of disentanglement in {G}erman federalism reform}.
+\newblock \bibinfo{journal}{Regional \& Federal Studies} \bibinfo{volume}{26},
+  \bibinfo{pages}{667--686}.
+\newblock \DOIprefix\doi{10.1080/13597566.2016.1236335}.
+%Type = Article
+\bibitem[{Kuhlmann and Franzke(2021)}]{Kuhlmann2021}
+\bibinfo{author}{Kuhlmann, S.}, \bibinfo{author}{Franzke, J.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Multi-level responses to {COVID}-19: {C}risis
+  coordination in {G}ermany from an intergovernmental perspective}.
+\newblock \bibinfo{journal}{Local Government Studies} \bibinfo{volume}{48},
+  \bibinfo{pages}{312--334}.
+\newblock \DOIprefix\doi{10.1080/03003930.2021.1904398}.
+%Type = Book
+\bibitem[{Madison([1787]1975)}]{Madison1787}
+\bibinfo{author}{Madison, J.}, \bibinfo{year}{[1787]1975}.
+\newblock \bibinfo{title}{The Papers of James Madison}. volume
+  \bibinfo{volume}{9 (9 April 1786 - 24 May 1787)}.
+\newblock \bibinfo{publisher}{The University of Chicago Press},
+  \bibinfo{address}{Chicago}.
+%Type = Article
+\bibitem[{Mitze et~al.(2020)Mitze, Kosfeld, Rode and W\"alde}]{Mitze2020}
+\bibinfo{author}{Mitze, T.}, \bibinfo{author}{Kosfeld, R.},
+  \bibinfo{author}{Rode, J.}, \bibinfo{author}{W\"alde, K.},
+  \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Face masks considerably reduce {COVID}-19 cases in
+  {G}ermany}.
+\newblock \bibinfo{journal}{PNAS: Proceedings of the National Academy of
+  Sciences} \bibinfo{volume}{117}, \bibinfo{pages}{32293--32301}.
+\newblock \DOIprefix\doi{10.1073/pnas.2015954117}.
+%Type = Article
+\bibitem[{Neundorf and Pardos-Prado(2021)}]{Neundorf2021}
+\bibinfo{author}{Neundorf, A.}, \bibinfo{author}{Pardos-Prado, S.},
+  \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{The impact of {COVID}-19 on {T}rump's electoral
+  demise: The role of economic and democratic accountability}.
+\newblock \bibinfo{journal}{Perspectives on Politics} \bibinfo{volume}{20},
+  \bibinfo{pages}{170--186}.
+\newblock \DOIprefix\doi{10.1017/s1537592721001961}.
+%Type = Article
+\bibitem[{Rendleman and Rogowski(2022)}]{Rendleman2022}
+\bibinfo{author}{Rendleman, H.}, \bibinfo{author}{Rogowski, J.C.},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Americans’ attitudes toward federalism}.
+\newblock \bibinfo{journal}{Political Behavior}
+  \DOIprefix\doi{10.1007/s11109-022-09820-3}.
+%Type = Article
+\bibitem[{Rose-Ackerman(1980)}]{RoseAckerman1980}
+\bibinfo{author}{Rose-Ackerman, S.}, \bibinfo{year}{1980}.
+\newblock \bibinfo{title}{Risk taking and reelection: Does federalism promote
+  innovation?}
+\newblock \bibinfo{journal}{The Journal of Legal Studies} \bibinfo{volume}{9},
+  \bibinfo{pages}{593--616}.
+\newblock \DOIprefix\doi{10.1086/467654}.
+%Type = Inbook
+\bibitem[{Rowe and Turner(2023)}]{Rowe2023}
+\bibinfo{author}{Rowe, C.}, \bibinfo{author}{Turner, E.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Germany and the {COVID}-19 Pandemic}.
+  \bibinfo{publisher}{Springer}.
+\newblock pp. \bibinfo{pages}{193--230}.
+\newblock \DOIprefix\doi{10.1007/978-3-031-29479-2_7}.
+%Type = Book
+\bibitem[{Scharpf(1994)}]{Scharpf1994}
+\bibinfo{author}{Scharpf, F.W.}, \bibinfo{year}{1994}.
+\newblock \bibinfo{title}{Optionen des Föderalismus in Deutschland und
+  Europa.}
+\newblock \bibinfo{publisher}{Campus Fachbuch}.
+%Type = Article
+\bibitem[{Singer(2022)}]{Singer2022}
+\bibinfo{author}{Singer, M.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Crowding out the economy: Coronavirus and governor
+  approval}.
+\newblock \bibinfo{journal}{aspa preprints (working paper)}
+  \DOIprefix\doi{10.33774/apsa-2022-kgtwk}.
+%Type = Misc
+\bibitem[{Steinmetz et~al.(2022)Steinmetz, Batzdorfer, Scherhag and
+  Bosnjak}]{Steinmetz2022}
+\bibinfo{author}{Steinmetz, H.}, \bibinfo{author}{Batzdorfer, V.},
+  \bibinfo{author}{Scherhag, J.}, \bibinfo{author}{Bosnjak, M.},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{The {ZPID} {L}ockdown {M}easures {D}ataset for
+  {G}ermany}.
+\newblock \DOIprefix\doi{10.23668/PSYCHARCHIVES.6676}.
+%Type = Article
+\bibitem[{Strumpf(2002)}]{Strumpf2002}
+\bibinfo{author}{Strumpf, K.S.}, \bibinfo{year}{2002}.
+\newblock \bibinfo{title}{Does government decentralization increase policy
+  innovation?}
+\newblock \bibinfo{journal}{Journal of Public Economic Theory}
+  \bibinfo{volume}{4}, \bibinfo{pages}{207--241}.
+\newblock \DOIprefix\doi{10.1111/1467-9779.00096}.
+%Type = Article
+\bibitem[{Tonti(2022)}]{Tonti2022}
+\bibinfo{author}{Tonti, L.}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Symphony or cacophony? {O}rchestrating federal
+  mechanics toward {C}ovid-19 response in the {U}nited {S}tates and {G}ermany}.
+\newblock \bibinfo{journal}{European Journal of Health Law}
+  \bibinfo{volume}{29}, \bibinfo{pages}{79--102}.
+\newblock \DOIprefix\doi{10.1163/15718093-bja10063}.
+%Type = Article
+\bibitem[{Turner and Rowe(2013)}]{Turner2013}
+\bibinfo{author}{Turner, E.}, \bibinfo{author}{Rowe, C.}, \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{Party servants, ideologues or regional
+  representatives? {T}he {G}erman {L}änder and the reform of federalism}.
+\newblock \bibinfo{journal}{West European Politics} \bibinfo{volume}{36},
+  \bibinfo{pages}{382--404}.
+\newblock \DOIprefix\doi{10.1080/01402382.2013.749663}.
+%Type = Article
+\bibitem[{Tyler and Gerken(2022)}]{Tyler2022}
+\bibinfo{author}{Tyler, C.W.}, \bibinfo{author}{Gerken, H.K.},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{The myth of the laboratories of democracy}.
+\newblock \bibinfo{journal}{Columbia Law Review} \bibinfo{volume}{122},
+  \bibinfo{pages}{2187 -- 2240}.
+%Type = Article
+\bibitem[{Weaver(1986)}]{Weaver1986}
+\bibinfo{author}{Weaver, R.K.}, \bibinfo{year}{1986}.
+\newblock \bibinfo{title}{The politics of blame avoidance}.
+\newblock \bibinfo{journal}{Journal of Public Policy} \bibinfo{volume}{6},
+  \bibinfo{pages}{371--398}.
+\newblock \DOIprefix\doi{10.1017/s0143814x00004219}.
+
+\end{thebibliography}
