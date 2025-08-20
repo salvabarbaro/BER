@@ -11,11 +11,11 @@ library(readr)        # write_csv()
 library(modelsummary)
 library(tidyverse)
 
-setwd("~/Documents/Research/Yardstick/BER/ReplicationFiles/Final/")
+setwd("~/Documents/Research/Yardstick/BER/github/BER/")
 # 1) Load data (Stata .dta)
 df <- haven::read_dta("Main_data_set_replication.dta") #%>%
 #  mutate(data_id = 1:nrow(.))
-idtbl <- read.csv("~/Documents/Research/Yardstick/BER/github/BER/IDtable.csv", header = T) %>%
+idtbl <- read.csv("IDtable.csv", header = T) %>%
 #  dplyr::select(., c("statenumber", "Land", "stmt.id", "data.id")) %>%
   dplyr::rename(., stmt_id = stmt.id) %>%
   dplyr::rename(., data_id = data.id) %>%
@@ -23,7 +23,7 @@ idtbl <- read.csv("~/Documents/Research/Yardstick/BER/github/BER/IDtable.csv", h
 df2 <- df %>% left_join(x = ., 
                        y = idtbl,
                        by = c("date", "statenumber", "index", "wave")) %>%
-  distinct(.)
+  distinct(.)  # resolves the warnings
 df <- df2
 rm(df2)
 
@@ -37,7 +37,7 @@ dat <- df %>% filter(wave %in% c(2, 3)) %>%
 
 # Brant test (PO/parallel lines)
 m_full <- polr(as.factor(index) ~ lninc + lnincfed + att_t_fed + att_t_fed + FKM21 + econ_strength, 
-               method = "logistic", data = dat.ai)
+               method = "logistic", data = dat)
 po_test <- brant::brant(m_full)
 rm(m_full, po_test)
 # The five initial models (main = mod5)
@@ -56,6 +56,7 @@ res.main <- lapply(list(mod1, mod2, mod3, mod4, mod5), FUN = polr.fun)
 modelsummary(res.main, exponentiate = T, statistic = "conf.int", coef_omit = "2|3|week", vocov = ~date)
 ##############################
 
+# Alternative to all-in-one: 
 # step-by-step
 p1 <- polr(formula = mod1, data = dat, Hess = T, model = T)
 modelsummary(p1, exponentiate = T, statistic = "conf.int", coef_omit = "2|3", vcov = ~date)
@@ -74,7 +75,7 @@ modelsummary(list(p1, p2, p3, p4, p5), exponentiate = T,
              statistic = "conf.int", coef_omit = "2|3|week")
 ##############################################################
 ## Robustness check with AI-generated values
-ai.data <- read_dta("~/Documents/Research/Yardstick/BER/openai/ai.dta")
+ai.data <- read_dta("ai.dta")
 #dat$ai_index <- ai.data$ai_index
 dat.ai <- dat %>% 
   left_join(x = ., 
@@ -130,19 +131,27 @@ modelplot(mainmodlist,
 
 ### Compare human coded models and AI-generated PPI values
 mainai.list <- list(p1, p1.ai, p2, p2.ai, p3, p3.ai, p4, p4.ai, p5, p5.ai)
-names(mainai.list) <- c("(1)", "(1.AI)", "(2)", "(2.AI)", "(3)", "(3.AI)", "(4)", "(4.AI)", "Main", "Main.AI")
-modelplot(mainai.list, 
-          exponentiate = T,
-          coef_map = c('lninc' = 'ln(state-level inc. rate)'),
-          vcov = ~date
-) +
-  geom_vline(xintercept = 1, linetype = "dashed") +
+lt <- setNames(rep(c("solid", "dashed"), length.out = length(mainai.list)),
+               names(mainai.list))
+
+modelplot(
+  mainai.list,
+  exponentiate = TRUE,
+  coef_map = c('lninc' = 'ln(state-level inc. rate)'),
+  vcov = ~ date
+  ) +
+  aes(linetype = model) +                                # map linetype to model
+  geom_vline(xintercept = 1, linetype = "dotdash", linewidth = 1.5) +
   theme_gray(base_size = 22) +
-  scale_colour_manual(values =c("red", "red", "blue", "blue", 
-                                "yellow","yellow", "brown", "brown", 
-                                "purple", "purple")) +
-  xlim(0.5, 3.5)
-ggsave("~/Documents/Research/Yardstick/BER/Pres/mainAIcomp.pdf",
+  scale_colour_manual(
+    values = c("red","red","blue","blue","yellow","yellow","brown","brown","purple","purple"),
+    breaks = names(mainai.list)
+  ) +
+  scale_linetype_manual(values = lt, breaks = names(mainai.list)) +
+  xlim(0.5, 3.5) + coord_flip() +
+  labs(x = "Odds and (exp.) 95% CIs")
+##
+ggsave("~/Documents/Research/Yardstick/BER/git/6842e459f8d02615df55d365/Presentation/mainAIcomp.pdf",
        width = 16, height = 8)
 #######################################################################################
 ### Robustness Checks
@@ -226,10 +235,11 @@ modelplot(overview.list,
           coef_map = c('lninc' = 'ln(state-level inc. rate)'),
           vcov = ~date
 ) +
-  geom_vline(xintercept = 1, linetype = "dashed") +
+  geom_vline(xintercept = 1, linetype = "dotdash", linewidth = 1.5) +
   theme_gray(base_size = 22) +
-  coord_flip()#+
+  coord_flip()+
+  labs(x = "Odds and (exp.) 95% CIs")
 #  scale_colour_manual(values =c("red", rep("purple", 7))) # +
 #  xlim(0.5, 5)
-ggsave("~/Documents/Research/Yardstick/BER/Pres/robstnessOverview.pdf", 
+ggsave("~/Documents/Research/Yardstick/BER/git/6842e459f8d02615df55d365/Presentation/robstnessOverview.pdf", 
        width = 16, height = 8)          
