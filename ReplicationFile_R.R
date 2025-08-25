@@ -23,7 +23,7 @@ idtbl <- read.csv("IDtable.csv", header = T) %>%
 df2 <- df %>% left_join(x = ., 
                        y = idtbl,
                        by = c("date", "statenumber", "index", "wave")) %>%
-  distinct(.)  # resolves the warnings
+  distinct(.)  # resolves the warnings~
 df <- df2
 rm(df2)
 
