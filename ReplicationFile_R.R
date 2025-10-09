@@ -23,7 +23,7 @@ idtbl <- read.csv("IDtable.csv", header = T) %>%
 df2 <- df %>% left_join(x = ., 
                        y = idtbl,
                        by = c("date", "statenumber", "index", "wave")) %>%
-  distinct(.)  # resolves the warnings
+  distinct(.)  # resolves the warnings~
 df <- df2
 rm(df2)
 
@@ -54,7 +54,7 @@ mod5 <- as.factor(index) ~ lninc + lnincfed + lnvac +
 polr.fun <- function(mod){polr(formula = mod, data = dat, Hess = T, model= T)}
 res.main <- lapply(list(mod1, mod2, mod3, mod4, mod5), FUN = polr.fun)
 modelsummary(res.main, exponentiate = T, statistic = "conf.int", coef_omit = "2|3|week", vocov = ~date)
-##############################
+##############################?#
 
 # Alternative to all-in-one: 
 # step-by-step
