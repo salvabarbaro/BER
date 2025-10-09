@@ -16,30 +16,31 @@ setwd("~/Documents/Research/Yardstick/BER/github/BER/")
 df <- haven::read_dta("Main_data_set_replication.dta") #%>%
 #  mutate(data_id = 1:nrow(.))
 idtbl <- read.csv("IDtable.csv", header = T) %>%
-#  dplyr::select(., c("statenumber", "Land", "stmt.id", "data.id")) %>%
+  #  dplyr::select(., c("statenumber", "Land", "stmt.id", "data.id")) %>%
   dplyr::rename(., stmt_id = stmt.id) %>%
   dplyr::rename(., data_id = data.id) %>%
   dplyr::mutate(date = as.Date(date))
 df2 <- df %>% left_join(x = ., 
-                       y = idtbl,
-                       by = c("date", "statenumber", "index", "wave")) %>%
+                        y = idtbl,
+                        by = c("date", "statenumber", "index", "wave")) %>%
   distinct(.)  # resolves the warnings
 df <- df2
 rm(df2)
 
 # 2) Restrict to waves 2 or 3 (Stata: if (wave == 2 | wave == 3))
+#    add timetrend variable 
 dat <- df %>% filter(wave %in% c(2, 3)) %>%
-  mutate(date.fct = as.factor(date),
-         week.fct = as.factor(weeknr)) %>%
-  mutate(timetrend = as.numeric(date - min(date))) %>%
-  mutate(weektrend = as.numeric(weeknr - min(weeknr)))
-
+  mutate(week.fct = as.factor(weeknr)) %>%   # for week FE
+  mutate(timetrend = as.numeric(date - min(date))) %>%  # for timetrend in mod2
+  mutate(inc.dev = (exp(lninc)- exp(lnincfed))/ exp(lnincfed),  # rel. diff (in Robustn.Ch.)
+         vac.dev = (exp(lnvac)- exp(lnvacfed))/ exp(lnvacfed))  # rel. diff (in Robustn.Ch.)
 
 # Brant test (PO/parallel lines)
 m_full <- polr(as.factor(index) ~ lninc + lnincfed + att_t_fed + att_t_fed + FKM21 + econ_strength, 
                method = "logistic", data = dat)
 po_test <- brant::brant(m_full)
 rm(m_full, po_test)
+######################################################################################
 # The five initial models (main = mod5)
 mod1 <- as.factor(index) ~ lninc + lnincfed
 mod2 <- as.factor(index) ~ lninc + lnincfed + timetrend      
@@ -50,30 +51,17 @@ mod5 <- as.factor(index) ~ lninc + lnincfed + lnvac +
   lnvacfed  + att_t_fed + FKM21 + 
   econ_strength + week.fct
 
-## all-in-one
-polr.fun <- function(mod){polr(formula = mod, data = dat, Hess = T, model= T)}
-res.main <- lapply(list(mod1, mod2, mod3, mod4, mod5), FUN = polr.fun)
-modelsummary(res.main, exponentiate = T, statistic = "conf.int", coef_omit = "2|3|week", vocov = ~date)
-##############################
 
-# Alternative to all-in-one: 
-# step-by-step
-p1 <- polr(formula = mod1, data = dat, Hess = T, model = T)
-modelsummary(p1, exponentiate = T, statistic = "conf.int", coef_omit = "2|3", vcov = ~date)
-p2 <- polr(formula = mod2, data = dat, Hess = T, model = T)
-modelsummary(p2, exponentiate = T, statistic = "conf.int", coef_omit = "2|3", vcov = ~date)
-p3 <- polr(formula = mod3, data = dat, Hess = T, model = T)
-modelsummary(p3, exponentiate = T, statistic = "conf.int", coef_omit = "2|3", vcov = ~date)
-p4 <- polr(formula = mod4, data = dat, Hess = T, model = T)
-modelsummary(p4, exponentiate = T, statistic = "conf.int", coef_omit = "2|3", vcov = ~date)
-p5 <- polr(formula = mod5, data = dat, Hess = T, model = T)
-modelsummary(p5, exponentiate = T, 
-             statistic = "conf.int", 
-             coef_omit = "2|3|week", 
-             vcov = ~date)
-modelsummary(list(p1, p2, p3, p4, p5), exponentiate = T,
-             statistic = "conf.int", coef_omit = "2|3|week")
-##############################################################
+polr.fun <- function(mod, d){polr(formula = mod, data = d, Hess = T, model= T)}
+res.main <- lapply(list(mod1, mod2, mod3, mod4, mod5), FUN = polr.fun, d = dat)
+start.time <- Sys.time()
+modelsummary(res.main, exponentiate = T, 
+             statistic = "conf.int", coef_omit = "2|3|week", 
+             vocov = ~date
+            )
+end.time <- Sys.time()
+round(end.time - start.time,2)
+####################################################################################
 ## Robustness check with AI-generated values
 ai.data <- read_dta("ai.dta")
 #dat$ai_index <- ai.data$ai_index
@@ -81,8 +69,8 @@ dat.ai <- dat %>%
   left_join(x = ., 
             y = ai.data %>% dplyr::select(., c("data_id", "stmt_id", "ai_index")),
             by = c("stmt_id", "data_id")) %>%
-  distinct(.)
-##########################################################
+  distinct(.) 
+
 mod1.ai <- as.factor(ai_index) ~ lninc + lnincfed
 mod2.ai <- as.factor(ai_index) ~ lninc + lnincfed + timetrend      
 mod3.ai <- as.factor(ai_index) ~ lninc + lnincfed + week.fct
@@ -94,65 +82,48 @@ mod5.ai <- as.factor(ai_index) ~ lninc + lnincfed + lnvac +
 
 polr.fun <- function(mod){polr(formula = mod, data = dat.ai, Hess = T, model= T)}
 res.ai <- lapply(list(mod1.ai, mod2.ai, mod3.ai, mod4.ai, mod5.ai), FUN = polr.fun)
-modelsummary(res.ai, exponentiate = T, statistic = "conf.int", coef_omit = "2|3|week", vcov = ~data)
+modelsummary(res.ai, exponentiate = T, 
+             statistic = "conf.int", coef_omit = "2|3|week", 
+             vocov = ~date,
+#             output = "data.frame"
+            )
 
-p1.ai <- polr(formula = mod1.ai, data = dat.ai, Hess = T, model = T)
-modelsummary(p1.ai, exponentiate = T, statistic = "conf.int", coef_omit = "2|3", vcov = ~date)
-## significant
-p2.ai <- polr(formula = mod2.ai, data = dat.ai, Hess = T, model = T)
-modelsummary(p2.ai, exponentiate = T, statistic = "conf.int", coef_omit = "2|3", vcov = ~date)
-## mod2: significant
-p3.ai <- polr(formula = mod3.ai, data = dat.ai, Hess = T, model = T)
-modelsummary(p3.ai, exponentiate = T, statistic = "conf.int", coef_omit = "2|3", vcov = ~date)
-## mod3: no longer significant 
-p4.ai <- polr(formula = mod4.ai, data = dat.ai, Hess = T, model = T)
-modelsummary(p4.ai, exponentiate = T, statistic = "conf.int", coef_omit = "2|3", vcov = ~date)
-## still significant
-p5.ai <- polr(formula = mod5.ai, data = dat.ai, Hess = T, model = T)
-modelsummary(p5.ai, exponentiate = T, 
-             statistic = "conf.int", 
-             coef_omit = "2|3", 
-             vcov = ~date)
-## still significant
-mainmodlist <- list(p1, p2, p3, p4, p5) 
-names(mainmodlist) <- c("(1): minimal", "(2): timetrend", "(3): Week-FE", "(4): covariates", "(5): Main model")
-modelplot(mainmodlist, 
-             exponentiate = T,
-             coef_map = c('lninc' = 'ln(state-level inc. rate)'),
-          vcov = ~date
-             ) +
-  geom_vline(xintercept = 1, linetype = "dashed") +
-  theme_minimal(base_size = 18) +
-  scale_colour_manual(values =c("red", "blue", 
-                                "yellow", "brown", 
-                                "purple")) +
-  xlim(0.5, 3.5) 
+##
+# 
+#modelplot(res.ai, exponentiate = T, 
+#          coef_map = c('lninc' = 'ln(state-level inc. rate)'),
+#          vcov = ~date
+#          )
+#names(res.main) <- paste0(seq_along(res.main),"Initial")
+names(res.main) <- c("(1): minimal", "(2): timetrend", "(3): Week-FE", "(4): covariates", "(5): Main model")
+names(res.ai) <- c("(1).AI", "(2).AI", "(3).AI", "(4).AI", "Main.AI")
+#names(res.ai)   <- paste0(seq_along(res.ai),"AI")
+res.all <- c(res.main, res.ai)
+lt <- setNames(
+  rep(c("solid", "dashed"), length.out = length(res.all)),
+               names(res.all))
 
 
-### Compare human coded models and AI-generated PPI values
-mainai.list <- list(p1, p1.ai, p2, p2.ai, p3, p3.ai, p4, p4.ai, p5, p5.ai)
-lt <- setNames(rep(c("solid", "dashed"), length.out = length(mainai.list)),
-               names(mainai.list))
-
+# Create a combined modelplot
 modelplot(
-  mainai.list,
-  exponentiate = TRUE,
+  res.all,
+  exponentiate = T, 
   coef_map = c('lninc' = 'ln(state-level inc. rate)'),
-  vcov = ~ date
-  ) +
+  vocov = ~date,
+#             output = "data.frame"
+) +
   aes(linetype = model) +                                # map linetype to model
   geom_vline(xintercept = 1, linetype = "dotdash", linewidth = 1.5) +
   theme_gray(base_size = 22) +
   scale_colour_manual(
     values = c("red","red","blue","blue","yellow","yellow","brown","brown","purple","purple"),
-    breaks = names(mainai.list)
+    breaks = names(res.all)
   ) +
-  scale_linetype_manual(values = lt, breaks = names(mainai.list)) +
+  scale_linetype_manual(values = lt, breaks = names(res.all)) +
   xlim(0.5, 3.5) + coord_flip() +
   labs(x = "Odds and (exp.) 95% CIs")
-##
-ggsave("~/Documents/Research/Yardstick/BER/git/6842e459f8d02615df55d365/Presentation/mainAIcomp.pdf",
-       width = 16, height = 8)
+
+
 #######################################################################################
 ### Robustness Checks
 ## 1. Remove BY, NW; restrict on mod5
@@ -188,13 +159,13 @@ dat.rc4 <- dat %>%
          vac.dev = (exp(lnvac)- exp(lnvacfed))/ exp(lnvacfed))
 mod.rc4 <- as.factor(index) ~ inc.dev + vac.dev + att_t_fed + 
   FKM21 + econ_strength + week.fct
-  
+
 rc4 <- polr(formula = mod.rc4, data = dat.rc4, Hess = T, model = T)
 modelsummary(rc4, exponentiate = T, 
              statistic = "conf.int", 
              coef_omit = "2|3|week",
              vcov = ~date
-             )
+)
 #######################################################################
 dat.rc5 <- dat %>% mutate(states.fct = as.factor(statenumber))
 #eststo, title(fixed1): feologit index lninc lnincfed date 
@@ -210,7 +181,7 @@ rc5B <- polr(formula = as.factor(index) ~ lninc + lnincfed + lnvac + lnvacfed +
 modelsummary(list(rc5A, rc5B), exponentiate = T, 
              statistic = "conf.int", 
              coef_omit = "2|3|week|fct",
-#             vcov = ~date
+             #             vcov = ~date
 )
 ## no clustered SE, 
 ########################################################################
@@ -229,10 +200,10 @@ overview.list <- list(p5, p5.ai,   # main and main.ai
                       rc1,         # BY & NW
                       rc2,         # Week of PMC
                       rc3,         # PMC + 3days
-       #               rc4,         # relative dev.
+                      #               rc4,         # relative dev.
                       rc5A, rc5B, # FE
                       rc6         # Dummy East+Berlin
-                      )
+)
 names(overview.list) <- c("Main", "Main.AI", "BY.NW", "PMC.Week", "PMC+3days", "FE1", "FE2", "East.Bln")
 
 modelplot(overview.list, 
@@ -282,3 +253,25 @@ ggplot(df %>% filter(., is.na(model)==F),
   labs(y = NULL, x = "Odds and (exp.) 95% CIs")
 ggsave("~/Documents/Research/Yardstick/BER/git/6842e459f8d02615df55d365/Presentation/robstnessOverview.pdf", 
        width = 16, height = 8)   
+
+
+
+
+
+
+
+###########################################################################################
+### Figures ###############################################################################
+## Show results for the five initial model specifications
+names(res.main) <- c("(1): minimal", "(2): timetrend", "(3): Week-FE", "(4): covariates", "(5): Main model")
+modelplot(res.main, 
+          exponentiate = T,
+          coef_map = c('lninc' = 'ln(state-level inc. rate)'),
+          vcov = ~date
+) +
+  geom_vline(xintercept = 1, linetype = "dashed") +
+  theme_minimal(base_size = 18) +
+  scale_colour_manual(values =c("red", "blue", 
+                                "yellow", "brown", 
+                                "purple")) +
+  xlim(0.5, 3.5) 
