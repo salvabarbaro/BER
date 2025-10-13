@@ -79,3 +79,109 @@ fit_and_print("model5",
               y="index",
               X=["lninc", "lnincfed", "lnvac", "lnvacfed", "att_t_fed", "FKM21", "econ_strength"] + list(wk.columns),
               cluster="date")
+
+#######   FIXED EFFECTS ORDERED MODELS
+# 1) Dependent variable must be *ordered* categorical
+#    (adjust levels/order if you need a specific ordering)
+df["index"] = pd.Categorical(df["index"], ordered=True)
+
+# 2) Fixed-effects group as categorical
+df["statenumber"] = df["statenumber"].astype("category")
+
+# 3) Convert date to a numeric regressor; keep original for clustering if needed
+df["date"] = pd.to_datetime(df["date"], errors="coerce")
+df["date_num"] = df["date"].astype("int64") / 1e9 / 86400
+
+# 4) Build design matrix with state FE (dummies)
+X = df[["lninc", "lnincfed", "date_num", "statenumber"]].copy()
+X = pd.get_dummies(X, columns=["statenumber"], drop_first=True)
+
+# 5) Ensure purely numeric, drop any zero-variance/constant columns
+X = X.apply(pd.to_numeric, errors="coerce").astype(float)
+nonconst = X.nunique(dropna=True) > 1
+X = X.loc[:, nonconst]
+
+# 6) Align X and y, drop rows with missing values consistently
+y = df["index"]
+keep = X.notna().all(axis=1) & y.notna()
+X = X.loc[keep]
+y = y.loc[keep]
+
+# 7) Fit ordered logit
+mod = OrderedModel(endog=y, exog=X, distr="logit")
+res = mod.fit(method="bfgs", disp=False)
+
+print(res.summary())
+
+# Odds ratios
+print("\nOdds ratios:\n", np.exp(res.params))
+params = res.params
+cov = res.cov_params()
+
+# Compute standard errors
+se = np.sqrt(np.diag(cov))
+
+# Wald 95% CIs in log-odds scale
+z = 1.96
+lower = params - z * se
+upper = params + z * se
+
+# Exponentiate to get odds ratios and CIs
+or_df = pd.DataFrame({
+    "Odds Ratio": np.exp(params),
+    "CI Lower": np.exp(lower),
+    "CI Upper": np.exp(upper)
+})
+
+# Show numbers with 3 decimal places (adjust as needed)
+pd.options.display.float_format = '{:.3f}'.format
+
+print(or_df)
+
+
+## FE2:
+## lninc + lnincfed + lnvac + lnvacfed +  prevac + timetrend + factor(Land),
+X = df[["lninc", "lnincfed", "lnvac", "lnvacfed", "prevac", "date_num", "statenumber"]].copy()
+X = pd.get_dummies(X, columns=["statenumber"], drop_first=True)
+
+# 5) Ensure purely numeric, drop any zero-variance/constant columns
+X = X.apply(pd.to_numeric, errors="coerce").astype(float)
+nonconst = X.nunique(dropna=True) > 1
+X = X.loc[:, nonconst]
+
+# 6) Align X and y, drop rows with missing values consistently
+y = df["index"]
+keep = X.notna().all(axis=1) & y.notna()
+X = X.loc[keep]
+y = y.loc[keep]
+
+# 7) Fit ordered logit
+mod = OrderedModel(endog=y, exog=X, distr="logit")
+res = mod.fit(method="bfgs", disp=False)
+
+print(res.summary())
+
+# Odds ratios
+print("\nOdds ratios:\n", np.exp(res.params))
+params = res.params
+cov = res.cov_params()
+
+# Compute standard errors
+se = np.sqrt(np.diag(cov))
+
+# Wald 95% CIs in log-odds scale
+z = 1.96
+lower = params - z * se
+upper = params + z * se
+
+# Exponentiate to get odds ratios and CIs
+or_df = pd.DataFrame({
+    "Odds Ratio": np.exp(params),
+    "CI Lower": np.exp(lower),
+    "CI Upper": np.exp(upper)
+})
+
+# Show numbers with 3 decimal places (adjust as needed)
+pd.options.display.float_format = '{:.3f}'.format
+
+print(or_df)
