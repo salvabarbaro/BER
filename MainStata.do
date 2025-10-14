@@ -1,5 +1,5 @@
 use "Main_data_set_replication.dta", clear
-*--- Replace vacdev with correct computation
+*---Replace vacdev with correct computation
 replace vacdev = (exp(lnvac) - exp(lnvacfed)) / exp(lnvacfed)
 
 capture erase "Results\maincoefs.csv"

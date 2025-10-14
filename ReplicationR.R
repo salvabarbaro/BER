@@ -1,7 +1,7 @@
 # Packages
 library(haven)        # for import of *.dta
 library(dplyr)
-library(ordinal)      # for fixed effects
+#library(ordinal)     # Alternative to MASS 
 library(MASS)         # polr()
 library(brant)        # brant test for proportional odds
 library(broom)        # tidy() for coefficients
