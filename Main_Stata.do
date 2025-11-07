@@ -1,6 +1,4 @@
 use "Main_data_set_replication.dta", clear
-*---Replace vacdev with correct computation
-replace vacdev = (exp(lnvac) - exp(lnvacfed)) / exp(lnvacfed)
 
 capture erase "Results\maincoefs.csv"
 capture erase "Results\allcoefs.csv"
@@ -32,8 +30,7 @@ eststo, title(weekMPK): ologit index lninc lnincfed lnvac lnvacfed prevac att_t_
 eststo, title(AfterMPK): ologit index lninc lnincfed lnvac lnvacfed prevac att_t_fed FKM21 econ_strength date if (wave == 2 | wave == 3) & dayssinceMPK <= 3, or cluster(date) nolog
 
 * Deviations instead of logs
-eststo, title(deviations): ologit index incdev vacdev att_t_fed FKM21 econ_strength i.weeknr if (wave == 2 | wave == 3), or cluster(date) nolog
-
+eststo, title(deviations): ologit index incdev vacdev prevac0 att_t_fed FKM21 econ_strength i.weeknr if (wave == 2 | wave == 3), or cluster(date) nolog
 
 esttab using "Results\maincoefs.csv", csv b(3) se(3) ar(3)  nonotes star(* .1 ** .05 *** .01) nogaps stats(N, fmt(0 3)) eform ///
 mtitles(model1 model2 model3 model4 model5 NoNRWBav EastBerlin fixed1 fixed2 weekMPK AfterMPK deviations) prehead("Ordered logit - All results are in odds ratios" "Significance: * = .1 / ** = .05 / *** = .01") keep(lninc lnincfed lnvac lnvacfed incdev vacdev) replace
