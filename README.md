@@ -1,8 +1,9 @@
 # BER
 
 **Replication Data for the Paper:**\
-*Autonomy and Accountability: Strategic Behaviour of German State Leaders During the COVID-19 Pandemic*
-*Public Choice (2025/2026) - In-Press status*
+*Autonomy and Accountability: Strategic Behaviour of German State Leaders During the COVID-19 Pandemic*\
+*Public Choice (2025/2026) - In-Press status*\
+*DOI: tba*
 
 ------------------------------------------------------------------------
 
