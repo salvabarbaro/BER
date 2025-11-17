@@ -54,7 +54,7 @@ def fit_and_print(title, y, X, cluster):
         OR, L, H, p = np.exp(b[nm]), np.exp(lo[nm]), np.exp(hi[nm]), res.pvalues[nm]
         print(f"{nm:>18s}: {OR:6.2f}  [{L:6.2f}, {H:6.2f}]  p={p:.3g}")
 
-# ----- Model specs (Stata parity) -----
+# ----- Model specs -----
 fit_and_print("model1",
               y="index",
               X=["lninc", "lnincfed"],
