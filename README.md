@@ -2,6 +2,7 @@
 
 **Replication Data for the Paper:**\
 *Autonomy and Accountability: Strategic Behaviour of German State Leaders During the COVID-19 Pandemic*\
+*by Salvatore Barbaro, Reyn van Ewijk, and Julia M. Rode*\
 *Public Choice (2025)*\
 *DOI: https://doi.org/10.1007/s11127-025-01357-3*
 
