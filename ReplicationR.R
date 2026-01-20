@@ -11,7 +11,6 @@ library(readr)        # write_csv()
 library(modelsummary)
 library(tidyverse)
 
-setwd("~/Documents/Research/Yardstick/BER/github/BER/")
 # 1) Load data (Stata .dta)
 df <- haven::read_dta("Main_data_set_replication.dta") %>%
        mutate(incdev = (exp(lninc)- exp(lnincfed))/ exp(lnincfed),
